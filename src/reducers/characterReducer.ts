@@ -29,11 +29,13 @@ export interface ICharacter {
 // Define the Character State
 export interface ICharacterState {
     readonly characters: ICharacter[];
+    readonly currentCharacter: ICharacter[];
 }
 
 // Define the initial state
 const initialCharacterState: ICharacterState = {
     characters: [],
+    currentCharacter: []
 };
 
 export const characterReducer: Reducer<ICharacterState, CharacterActions> = (
@@ -45,6 +47,12 @@ export const characterReducer: Reducer<ICharacterState, CharacterActions> = (
             return {
                 ...state,
                 characters: action.characters,
+            };
+        }
+        case CharacterActionTypes.GET_CURRENT: {
+            return {
+                ...state,
+                currentCharacter: action.currentCharacter,
             };
         }
         default:

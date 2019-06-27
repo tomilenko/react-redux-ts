@@ -19,9 +19,9 @@ class CharacterList extends React.Component<IProps> {
                 {characters &&
                     characters.map(character => {
                         return (
-                            <span key={character.name} className="name">
+                            <p key={character.name} className="name">
                                 {character.name}
-                            </span>
+                            </p>
                         );
                     })}
             </div>
